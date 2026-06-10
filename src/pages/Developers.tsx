@@ -53,7 +53,7 @@ export default function Developers() {
               <Users className="h-6 w-6" />
             </span>
             Equipe de Desenvolvimento
-          </h2>
+          </h1>
           <p className="text-slate-400 text-sm max-w-2xl mx-auto">
             Conheça os estudantes e o professor orientador do Instituto Federal do Pará (IFPA) responsáveis pela criação deste projeto educativo.
           </p>
