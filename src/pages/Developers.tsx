@@ -134,30 +134,17 @@ export default function Developers() {
           ))}
         </div>
 
-        {/* Informações do IFPA e KCM */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Informações do IFPA */}
+        <div className="flex justify-center">
           {/* Card IFPA */}
-          <div className="border border-kcm-dark rounded-2xl bg-kcm-darker/10 p-6 text-center space-y-4 flex flex-col items-center justify-center">
+          <div className="w-full max-w-2xl border border-kcm-dark rounded-2xl bg-kcm-darker/10 p-6 text-center space-y-4 flex flex-col items-center justify-center">
             <div className="p-3 bg-kcm-darker rounded-2xl border border-kcm-dark/60 flex items-center justify-center w-fit">
               <IfpaLogo size={32} />
             </div>
             <div className="space-y-2">
               <h3 className="text-base font-bold text-kcm-lightest">Instituto Federal do Pará</h3>
-              <p className="text-xs text-kcm-light max-w-xs mx-auto">
+              <p className="text-xs text-kcm-light max-w-md mx-auto">
                 Campus Conceição do Araguaia. Projeto desenvolvido como parte das atividades acadêmicas do Curso Técnico em Informática.
-              </p>
-            </div>
-          </div>
-
-          {/* Card KCM */}
-          <div className="border border-kcm-dark rounded-2xl bg-kcm-darker/10 p-6 text-center space-y-4 flex flex-col items-center justify-center">
-            <div className="p-3 bg-kcm-darker rounded-2xl border border-kcm-dark/60 flex items-center justify-center w-fit">
-              <KcmLogo size={44} />
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-base font-bold text-kcm-lightest">Projeto César KCM</h3>
-              <p className="text-xs text-kcm-light max-w-xs mx-auto">
-                Iniciativa educativa para o ensino de criptografia clássica e segurança digital de forma interativa.
               </p>
             </div>
           </div>
