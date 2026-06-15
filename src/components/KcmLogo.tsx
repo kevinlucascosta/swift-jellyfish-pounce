@@ -2,59 +2,36 @@ import React from "react";
 
 interface KcmLogoProps {
   className?: string;
-  size?: number;
 }
 
-export default function KcmLogo({ className = "", size = 64 }: KcmLogoProps) {
+export default function KcmLogo({ className = "" }: KcmLogoProps) {
   return (
-    <div className={`flex flex-col items-center justify-center ${className}`}>
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="transition-transform duration-300 hover:scale-105"
-      >
-        {/* Escudo de Fundo */}
-        <path
-          d="M50 5L15 20V50C15 72 35 90 50 95C65 90 85 72 85 50V20L50 5Z"
-          className="fill-kcm-darker stroke-kcm-light"
-          strokeWidth="4"
-          strokeLinejoin="round"
-        />
+    <div className={`w-full max-w-2xl mx-auto ${className}`}>
+      {/* Card Principal com as cores do site */}
+      <div className="relative bg-kcm-darker/30 border border-kcm-dark/60 rounded-2xl p-8 md:p-12 overflow-hidden shadow-2xl shadow-kcm-darkest/80 group transition-all duration-300 hover:border-kcm-light/30">
         
-        {/* Detalhe Interno do Escudo */}
-        <path
-          d="M50 12L23 24V48C23 65 38 80 50 85C62 80 77 65 77 48V24L50 12Z"
-          className="fill-kcm-dark/40 stroke-kcm-medium/50"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
+        {/* Cantoneira Superior Direita ┐ */}
+        <div className="absolute top-6 right-6 w-6 h-6 border-t-2 border-r-2 border-kcm-light/40 group-hover:border-kcm-light transition-colors duration-300" />
+        
+        {/* Cantoneira Inferior Esquerda └ */}
+        <div className="absolute bottom-6 left-6 w-6 h-6 border-b-2 border-l-2 border-kcm-light/40 group-hover:border-kcm-light transition-colors duration-300" />
 
-        {/* Letras KCM Estilizadas */}
-        <text
-          x="50"
-          y="58"
-          textAnchor="middle"
-          className="fill-kcm-lightest font-black tracking-wider"
-          style={{
-            fontSize: "26px",
-            fontFamily: "system-ui, -apple-system, sans-serif",
-            textShadow: "0px 2px 4px rgba(0,0,0,0.5)"
-          }}
-        >
-          KCM
-        </text>
+        {/* Conteúdo Centralizado */}
+        <div className="flex flex-col items-center text-center space-y-6 py-4">
+          {/* Letras KCM em Fonte Serifada Elegante */}
+          <h1 className="text-6xl md:text-8xl font-serif font-bold tracking-wide text-kcm-lightest select-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+            KCM
+          </h1>
 
-        {/* Linha de Brilho / Tecnologia */}
-        <path
-          d="M30 50H70"
-          className="stroke-kcm-light/30"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
+          {/* Linha Divisória Fina */}
+          <div className="w-full max-w-md h-[1px] bg-gradient-to-r from-transparent via-kcm-light/30 to-transparent" />
+
+          {/* Subtítulo Espaçado */}
+          <p className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-kcm-light uppercase max-w-lg leading-relaxed">
+            Desenvolvedores de Sites & Estudantes Técnicos de Informática
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

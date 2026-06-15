@@ -49,7 +49,7 @@ export default function Developers() {
     <Layout>
       <div className="max-w-5xl mx-auto space-y-10 animate-in fade-in duration-500">
         {/* Header da Página */}
-        <div className="space-y-4 text-center">
+        <div className="space-y-6 text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-kcm-lightest flex items-center justify-center gap-3">
             <span className="p-2 bg-kcm-light/10 rounded-xl border border-kcm-light/20 text-kcm-light">
               <Users className="h-6 w-6" />
@@ -57,11 +57,9 @@ export default function Developers() {
             Equipe de Desenvolvimento KCM
           </h1>
           
-          {/* Logotipo KCM centralizado abaixo do título */}
-          <div className="py-2 flex justify-center">
-            <div className="p-4 bg-kcm-darker/40 rounded-2xl border border-kcm-dark/60 shadow-xl shadow-kcm-darkest/50">
-              <KcmLogo size={80} />
-            </div>
+          {/* Banner KCM estilizado com cantoneiras e cores do site */}
+          <div className="py-2">
+            <KcmLogo />
           </div>
 
           <p className="text-kcm-light text-sm max-w-2xl mx-auto">
