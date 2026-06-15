@@ -26,17 +26,17 @@ export default function Layout({ children }: LayoutProps) {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-kcm-darkest/80 border-b border-kcm-dark/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo KCM */}
+            {/* Logo CÉSAR */}
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="flex items-center space-x-2 px-3 py-1.5 bg-kcm-darker rounded-xl border border-kcm-dark group-hover:border-kcm-light group-hover:bg-kcm-dark transition-all duration-300">
                 <Shield className="h-5 w-5 text-kcm-light group-hover:text-kcm-lightest transition-colors" />
                 <span className="font-black text-xl tracking-wider bg-gradient-to-r from-kcm-lightest via-kcm-light to-kcm-medium bg-clip-text text-transparent">
-                  KCM
+                  CÉSAR
                 </span>
               </div>
               <div>
                 <span className="font-bold text-sm tracking-widest text-kcm-lightest block">
-                  CÉSAR KCM
+                  CÉSAR
                 </span>
                 <span className="block text-[9px] text-kcm-light/80 font-medium tracking-widest uppercase">
                   IFPA Campus Conceição
