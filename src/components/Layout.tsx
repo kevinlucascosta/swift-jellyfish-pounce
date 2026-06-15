@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, BookOpen, Lock, Unlock, Users, GraduationCap, Shield } from "lucide-react";
+import { Menu, X, BookOpen, Lock, Unlock, Users, Shield } from "lucide-react";
+import IfpaLogo from "./IfpaLogo";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -114,8 +115,10 @@ export default function Layout({ children }: LayoutProps) {
       <footer className="bg-kcm-darkest border-t border-kcm-darker py-8 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <div className="flex items-center space-x-3">
-              <GraduationCap className="h-6 w-6 text-kcm-light" />
+            <div className="flex items-center space-x-4">
+              <div className="p-2 bg-kcm-darker rounded-xl border border-kcm-dark/60 flex items-center justify-center">
+                <IfpaLogo size={24} />
+              </div>
               <div>
                 <p className="text-sm font-semibold text-kcm-lightest">
                   Criptografia de César — Projeto Educativo

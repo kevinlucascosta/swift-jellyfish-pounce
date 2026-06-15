@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import { Users, GraduationCap, Mail, Github, Linkedin, Award } from "lucide-react";
+import IfpaLogo from "@/components/IfpaLogo";
 
 export default function Developers() {
   const team = [
@@ -108,7 +109,7 @@ export default function Developers() {
               </div>
 
               {/* Redes Sociais / Contato */}
-              <div className="relative z-10 flex items-center gap-3 pt-4 mt-4 border-t border-kcm-dark/60">
+              <div className="relative z-10 flex items-center gap-3 pt-4 mt-4 border-t border-t-kcm-dark/60">
                 <span className="text-[10px] text-kcm-medium font-medium">Contato:</span>
                 <div className="flex gap-2">
                   <button className="p-1.5 rounded-lg bg-kcm-darkest border border-kcm-dark text-kcm-light hover:text-kcm-lightest hover:border-kcm-light/30 transition-all">
@@ -127,12 +128,16 @@ export default function Developers() {
         </div>
 
         {/* Informações do IFPA */}
-        <div className="border border-kcm-dark rounded-2xl bg-kcm-darker/10 p-6 text-center space-y-3">
-          <GraduationCap className="h-8 w-8 text-kcm-light mx-auto" />
-          <h3 className="text-base font-bold text-kcm-lightest">Instituto Federal de Educação, Ciência e Tecnologia do Pará</h3>
-          <p className="text-xs text-kcm-light max-w-xl mx-auto">
-            Campus Conceição do Araguaia. Projeto desenvolvido como parte das atividades acadêmicas do Curso Técnico em Informática integrado ao Ensino Médio.
-          </p>
+        <div className="border border-kcm-dark rounded-2xl bg-kcm-darker/10 p-6 text-center space-y-4 flex flex-col items-center justify-center">
+          <div className="p-3 bg-kcm-darker rounded-2xl border border-kcm-dark/60 flex items-center justify-center w-fit">
+            <IfpaLogo size={32} />
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-base font-bold text-kcm-lightest">Instituto Federal de Educação, Ciência e Tecnologia do Pará</h3>
+            <p className="text-xs text-kcm-light max-w-xl mx-auto">
+              Campus Conceição do Araguaia. Projeto desenvolvido como parte das atividades acadêmicas do Curso Técnico em Informática integrado ao Ensino Médio.
+            </p>
+          </div>
         </div>
       </div>
     </Layout>
