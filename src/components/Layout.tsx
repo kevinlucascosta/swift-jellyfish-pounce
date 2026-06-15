@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, BookOpen, Lock, Unlock, Users, GraduationCap } from "lucide-react";
+import { Menu, X, BookOpen, Lock, Unlock, Users, GraduationCap, Shield } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,7 +27,8 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-16">
             {/* Logo KCM */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="px-3 py-1.5 bg-kcm-darker rounded-xl border border-kcm-dark group-hover:border-kcm-light group-hover:bg-kcm-dark transition-all duration-300">
+              <div className="flex items-center space-x-2 px-3 py-1.5 bg-kcm-darker rounded-xl border border-kcm-dark group-hover:border-kcm-light group-hover:bg-kcm-dark transition-all duration-300">
+                <Shield className="h-5 w-5 text-kcm-light group-hover:text-kcm-lightest transition-colors" />
                 <span className="font-black text-xl tracking-wider bg-gradient-to-r from-kcm-lightest via-kcm-light to-kcm-medium bg-clip-text text-transparent">
                   KCM
                 </span>
