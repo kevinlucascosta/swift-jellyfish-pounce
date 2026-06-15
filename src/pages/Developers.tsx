@@ -52,7 +52,7 @@ export default function Developers() {
             <span className="p-2 bg-kcm-light/10 rounded-xl border border-kcm-light/20 text-kcm-light">
               <Users className="h-6 w-6" />
             </span>
-            Equipe de Desenvolvimento
+            Equipe de Desenvolvimento KCM
           </h1>
           <p className="text-kcm-light text-sm max-w-2xl mx-auto">
             Conheça os estudantes e o professor orientador do Instituto Federal do Pará (IFPA) responsáveis pela criação deste projeto educativo.
