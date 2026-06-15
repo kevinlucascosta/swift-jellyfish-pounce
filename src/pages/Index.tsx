@@ -240,7 +240,7 @@ export default function Index() {
         {/* Curiosidades */}
         <div className="border border-kcm-dark rounded-2xl bg-kcm-darker/20 p-6 space-y-4">
           <h3 className="text-lg font-bold text-kcm-lightest flex items-center gap-2">
-            <HelpCircle className="h-5 w-5 text-kcm-light" /> Você sabia?
+            <HelpCircle className="h-5 w-5 text-kcm-light" /> Curiosidades
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-kcm-light">
             <div className="space-y-1">
