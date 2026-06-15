@@ -62,6 +62,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Paleta de cores KCM personalizada
+        kcm: {
+          lightest: "#CCD0CF",
+          light: "#9BA8AB",
+          medium: "#4A5C6A",
+          dark: "#253745",
+          darker: "#11212D",
+          darkest: "#06141B",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Menu, X, BookOpen, Lock, Unlock, Users, GraduationCap } from "lucide-react";
+import { Menu, X, BookOpen, Lock, Unlock, Users, GraduationCap } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,21 +20,23 @@ export default function Layout({ children }: LayoutProps) {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950">
+    <div className="min-h-screen flex flex-col bg-kcm-darkest text-kcm-lightest font-sans selection:bg-kcm-light selection:text-kcm-darkest">
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/60">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-kcm-darkest/80 border-b border-kcm-dark/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+            {/* Logo KCM */}
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="p-2 bg-cyan-500/10 rounded-xl border border-cyan-500/30 group-hover:border-cyan-400 group-hover:bg-cyan-500/20 transition-all duration-300">
-                <Shield className="h-6 w-6 text-cyan-400 animate-pulse" />
+              <div className="px-3 py-1.5 bg-kcm-darker rounded-xl border border-kcm-dark group-hover:border-kcm-light group-hover:bg-kcm-dark transition-all duration-300">
+                <span className="font-black text-xl tracking-wider bg-gradient-to-r from-kcm-lightest via-kcm-light to-kcm-medium bg-clip-text text-transparent">
+                  KCM
+                </span>
               </div>
               <div>
-                <span className="font-bold text-lg tracking-wider bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="font-bold text-sm tracking-widest text-kcm-lightest block">
                   CÉSAR CIPHER
                 </span>
-                <span className="block text-[10px] text-slate-400 font-medium tracking-widest uppercase">
+                <span className="block text-[9px] text-kcm-light/80 font-medium tracking-widest uppercase">
                   IFPA Campus Conceição
                 </span>
               </div>
@@ -51,8 +53,8 @@ export default function Layout({ children }: LayoutProps) {
                     to={item.path}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                       active
-                        ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-                        : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                        ? "bg-kcm-dark text-kcm-lightest border border-kcm-light/20"
+                        : "text-kcm-light hover:text-kcm-lightest hover:bg-kcm-darker"
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -66,7 +68,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900 focus:outline-none transition-colors"
+                className="p-2 rounded-xl text-kcm-light hover:text-kcm-lightest hover:bg-kcm-darker focus:outline-none transition-colors"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -76,7 +78,7 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-lg animate-in slide-in-from-top duration-200">
+          <div className="md:hidden border-b border-kcm-dark bg-kcm-darkest/95 backdrop-blur-lg animate-in slide-in-from-top duration-200">
             <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -88,8 +90,8 @@ export default function Layout({ children }: LayoutProps) {
                     onClick={() => setIsMenuOpen(false)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all ${
                       active
-                        ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-                        : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                        ? "bg-kcm-dark text-kcm-lightest border border-kcm-light/20"
+                        : "text-kcm-light hover:text-kcm-lightest hover:bg-kcm-darker"
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -108,21 +110,21 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-950 border-t border-slate-900 py-8 mt-auto">
+      <footer className="bg-kcm-darkest border-t border-kcm-darker py-8 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <div className="flex items-center space-x-3">
-              <GraduationCap className="h-6 w-6 text-cyan-500" />
+              <GraduationCap className="h-6 w-6 text-kcm-light" />
               <div>
-                <p className="text-sm font-semibold text-slate-300">
+                <p className="text-sm font-semibold text-kcm-lightest">
                   Criptografia de César — Projeto Educativo
                 </p>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-kcm-light">
                   IFPA Campus Conceição do Araguaia
                 </p>
               </div>
             </div>
-            <div className="text-xs text-slate-500">
+            <div className="text-xs text-kcm-medium">
               &copy; {new Date().getFullYear()} — Desenvolvido para fins didáticos.
             </div>
           </div>
