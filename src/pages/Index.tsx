@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
-import { BookOpen, HelpCircle, ArrowRight, Sparkles, History, RefreshCw } from "lucide-react";
+import { BookOpen, HelpCircle, ArrowRight, Sparkles, History, RefreshCw, ShieldCheck, MessageSquare, CreditCard, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -96,6 +96,53 @@ export default function Index() {
             <p className="text-xs text-kcm-medium italic">
               Exemplo: Com chave {demoShift}, a letra "A" se torna "{getShiftedChar("A", demoShift)}" e a letra "B" se torna "{getShiftedChar("B", demoShift)}".
             </p>
+          </div>
+        </div>
+
+        {/* Onde a Criptografia é usada hoje em dia? */}
+        <div className="border border-kcm-dark rounded-2xl bg-gradient-to-r from-kcm-darker/40 to-kcm-darkest p-6 md:p-8 space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-2xl font-bold text-kcm-lightest flex items-center gap-2">
+              <ShieldCheck className="h-6 w-6 text-kcm-light" /> Como a Criptografia protege você hoje em dia?
+            </h2>
+            <p className="text-sm text-kcm-light max-w-3xl">
+              A Cifra de César era simples, mas abriu portas para a segurança digital moderna. Hoje, sem perceber, você usa criptografia avançada a cada segundo na internet para manter sua vida segura:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* WhatsApp */}
+            <div className="bg-kcm-darkest/60 border border-kcm-dark/80 rounded-xl p-5 space-y-3 hover:border-kcm-light/20 transition-all">
+              <div className="p-2.5 bg-kcm-light/10 rounded-lg w-fit text-kcm-light">
+                <MessageSquare className="h-5 w-5" />
+              </div>
+              <h3 className="font-bold text-sm text-kcm-lightest">Mensagens no WhatsApp</h3>
+              <p className="text-xs text-kcm-light leading-relaxed">
+                Suas conversas usam <strong>criptografia de ponta a ponta</strong>. Isso significa que as mensagens são embaralhadas ao sair do seu celular e só desembaralham no celular de quem recebe. Ninguém no caminho consegue ler, nem mesmo o próprio aplicativo!
+              </p>
+            </div>
+
+            {/* Pix e Bancos */}
+            <div className="bg-kcm-darkest/60 border border-kcm-dark/80 rounded-xl p-5 space-y-3 hover:border-kcm-light/20 transition-all">
+              <div className="p-2.5 bg-kcm-light/10 rounded-lg w-fit text-kcm-light">
+                <CreditCard className="h-5 w-5" />
+              </div>
+              <h3 className="font-bold text-sm text-kcm-lightest">Pix e Compras Online</h3>
+              <p className="text-xs text-kcm-light leading-relaxed">
+                Quando você faz um Pix, paga uma conta ou digita a senha do seu cartão de crédito, a criptografia protege seus dados financeiros para que nenhum hacker consiga interceptar ou roubar seu dinheiro durante a transação.
+              </p>
+            </div>
+
+            {/* Sites Seguros */}
+            <div className="bg-kcm-darkest/60 border border-kcm-dark/80 rounded-xl p-5 space-y-3 hover:border-kcm-light/20 transition-all">
+              <div className="p-2.5 bg-kcm-light/10 rounded-lg w-fit text-kcm-light">
+                <Globe className="h-5 w-5" />
+              </div>
+              <h3 className="font-bold text-sm text-kcm-lightest">Sites Seguros (Cadeado)</h3>
+              <p className="text-xs text-kcm-light leading-relaxed">
+                Sabe aquele ícone de <strong>cadeado fechado</strong> ao lado do endereço deste site? Ele indica que a sua conexão é criptografada (usando HTTPS). Isso garante que as informações que você envia e recebe do site estão totalmente protegidas.
+              </p>
+            </div>
           </div>
         </div>
 
