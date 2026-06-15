@@ -34,7 +34,7 @@ export default function Layout({ children }: LayoutProps) {
               </div>
               <div>
                 <span className="font-bold text-sm tracking-widest text-kcm-lightest block">
-                  CÉSAR CIPHER
+                  CÉSAR KCM
                 </span>
                 <span className="block text-[9px] text-kcm-light/80 font-medium tracking-widest uppercase">
                   IFPA Campus Conceição
