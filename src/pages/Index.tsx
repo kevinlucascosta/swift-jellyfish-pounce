@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
-import { BookOpen, HelpCircle, ArrowRight, Sparkles, History, RefreshCw, ShieldCheck, MessageSquare, CreditCard, Globe } from "lucide-react";
+import { BookOpen, HelpCircle, ArrowRight, Sparkles, History, RefreshCw, ShieldCheck, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -99,50 +99,24 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Onde a Criptografia é usada hoje em dia? */}
-        <div className="border-2 border-kcm-dark rounded-3xl bg-gradient-to-r from-kcm-darker/40 to-kcm-darkest p-6 md:p-10 space-y-8 shadow-lg">
-          <div className="space-y-3">
-            <h2 className="text-2xl md:text-3xl font-black text-white flex items-center gap-3">
-              <ShieldCheck className="h-8 w-8 text-kcm-light" /> Como a Criptografia protege você hoje?
-            </h2>
-            <p className="text-base text-slate-200 font-medium max-w-4xl leading-relaxed">
-              A Cifra de César era simples, mas abriu portas para a segurança digital moderna. Hoje, sem perceber, você usa criptografia avançada a cada segundo na internet para manter sua vida segura:
-            </p>
+        {/* Seção Simplificada: Como a Criptografia Protege Você Hoje? */}
+        <div className="border-2 border-kcm-dark rounded-3xl bg-gradient-to-r from-kcm-darker/40 to-kcm-darkest p-6 md:p-10 space-y-6 shadow-lg relative overflow-hidden">
+          <div className="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+            <Lock className="h-48 w-48 text-kcm-light" />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* WhatsApp */}
-            <div className="bg-kcm-darkest/80 border-2 border-kcm-dark/80 rounded-2xl p-6 space-y-4 hover:border-kcm-light/40 transition-all duration-300 shadow-md">
-              <div className="p-3 bg-kcm-light/15 rounded-xl w-fit text-kcm-light border border-kcm-light/20">
-                <MessageSquare className="h-6 w-6" />
-              </div>
-              <h3 className="font-extrabold text-lg text-white">Mensagens no WhatsApp</h3>
-              <p className="text-sm text-slate-200 font-medium leading-relaxed">
-                Suas conversas usam <strong>criptografia de ponta a ponta</strong>. Isso significa que as mensagens são embaralhadas ao sair do seu celular e só desembaralham no celular de quem recebe. Ninguém no caminho consegue ler, nem mesmo o próprio aplicativo!
-              </p>
-            </div>
-
-            {/* Pix e Bancos */}
-            <div className="bg-kcm-darkest/80 border-2 border-kcm-dark/80 rounded-2xl p-6 space-y-4 hover:border-kcm-light/40 transition-all duration-300 shadow-md">
-              <div className="p-3 bg-kcm-light/15 rounded-xl w-fit text-kcm-light border border-kcm-light/20">
-                <CreditCard className="h-6 w-6" />
-              </div>
-              <h3 className="font-extrabold text-lg text-white">Pix e Compras Online</h3>
-              <p className="text-sm text-slate-200 font-medium leading-relaxed">
-                Quando você faz um Pix, paga uma conta ou digita a senha do seu cartão de crédito, a criptografia protege seus dados financeiros para que nenhum hacker consiga interceptar ou roubar seu dinheiro durante a transação.
-              </p>
-            </div>
-
-            {/* Sites Seguros */}
-            <div className="bg-kcm-darkest/80 border-2 border-kcm-dark/80 rounded-2xl p-6 space-y-4 hover:border-kcm-light/40 transition-all duration-300 shadow-md">
-              <div className="p-3 bg-kcm-light/15 rounded-xl w-fit text-kcm-light border border-kcm-light/20">
-                <Globe className="h-6 w-6" />
-              </div>
-              <h3 className="font-extrabold text-lg text-white">Sites Seguros (Cadeado)</h3>
-              <p className="text-sm text-slate-200 font-medium leading-relaxed">
-                Sabe aquele ícone de <strong>cadeado fechado</strong> ao lado do endereço deste site? Ele indica que a sua conexão é criptografada (usando HTTPS). Isso garante que as informações que você envia e recebe do site estão totalmente protegidas.
-              </p>
-            </div>
+          
+          <div className="relative z-10 space-y-4 max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-black text-white flex items-center gap-3">
+              <ShieldCheck className="h-8 w-8 text-kcm-light" /> Como a Criptografia Protege Você Hoje?
+            </h2>
+            
+            <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed">
+              Imagine que a criptografia funciona como um <strong>cadeado digital invisível</strong>. Toda vez que você envia uma mensagem no WhatsApp, faz um Pix, digita uma senha ou faz compras na internet, ela entra em ação. A criptografia pega as suas informações pessoais e as transforma em um código secreto embaralhado, garantindo que apenas você e a pessoa que vai receber consigam ler.
+            </p>
+            
+            <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed">
+              Sem essa proteção, pessoas mal-intencionadas poderiam facilmente ler suas conversas particulares ou roubar seus dados bancários. É graças a esse escudo invisível que você pode usar suas redes sociais, conversar com amigos e fazer pagamentos online todos os dias com total segurança e privacidade!
+            </p>
           </div>
         </div>
 
