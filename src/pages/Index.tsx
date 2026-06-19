@@ -52,7 +52,7 @@ export default function Index() {
                   <RefreshCw className="h-7 w-7 text-kcm-light" /> Como funciona o Deslocamento?
                 </h2>
                 <p className="text-base text-slate-200 font-medium">
-                  Altere o valor da chave para ver como cada letra do alfabeto é deslocada em tempo real.
+                  Altere o valor da chave para ver como cada letra do alphabet é deslocada em tempo real.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 bg-kcm-darkest p-3.5 rounded-2xl border-2 border-kcm-dark shadow-inner">
@@ -99,23 +99,23 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Seção Simplificada: Como a Criptografia Protege Você Hoje? */}
-        <div className="border-2 border-kcm-dark rounded-3xl bg-gradient-to-r from-kcm-darker/40 to-kcm-darkest p-6 md:p-10 space-y-6 shadow-lg relative overflow-hidden">
+        {/* Seção Simplificada e Resumida: Como a Criptografia Protege Você Hoje? */}
+        <div className="border-2 border-kcm-dark rounded-3xl bg-gradient-to-r from-kcm-darker/40 to-kcm-darkest p-6 md:p-10 space-y-4 shadow-lg relative overflow-hidden">
           <div className="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
             <Lock className="h-48 w-48 text-kcm-light" />
           </div>
           
-          <div className="relative z-10 space-y-4 max-w-4xl">
+          <div className="relative z-10 space-y-3 max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-black text-white flex items-center gap-3">
               <ShieldCheck className="h-8 w-8 text-kcm-light" /> Como a Criptografia Protege Você Hoje?
             </h2>
             
             <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed">
-              Imagine que a criptografia funciona como um <strong>cadeado digital invisível</strong>. Toda vez que você envia uma mensagem no WhatsApp, faz um Pix, digita uma senha ou faz compras na internet, ela entra em ação. A criptografia pega as suas informações pessoais e as transforma em um código secreto embaralhado, garantindo que apenas você e a pessoa que vai receber consigam ler.
+              A criptografia funciona como um <strong>cadeado digital invisível</strong>. Toda vez que você envia uma mensagem no WhatsApp, faz um Pix, digita uma senha ou faz compras na internet, ela transforma suas informações pessoais em um código secreto embaralhado.
             </p>
             
             <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed">
-              Sem essa proteção, pessoas mal-intencionadas poderiam facilmente ler suas conversas particulares ou roubar seus dados bancários. É graças a esse escudo invisível que você pode usar suas redes sociais, conversar com amigos e fazer pagamentos online todos os dias com total segurança e privacidade!
+              Esse escudo invisível garante que apenas você e quem deve receber tenham acesso aos dados, protegendo sua privacidade e seu dinheiro contra pessoas mal-intencionadas todos os dias!
             </p>
           </div>
         </div>
