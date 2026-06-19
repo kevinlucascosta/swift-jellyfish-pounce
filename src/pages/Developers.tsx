@@ -47,12 +47,12 @@ export default function Developers() {
 
   return (
     <Layout>
-      <div className="max-w-5xl mx-auto space-y-10 animate-in fade-in duration-500">
+      <div className="max-w-5xl mx-auto space-y-12 animate-in fade-in duration-500">
         {/* Header da Página */}
         <div className="space-y-6 text-center">
-          <h1 className="text-3xl font-extrabold tracking-tight text-kcm-lightest flex items-center justify-center gap-3">
-            <span className="p-2 bg-kcm-light/10 rounded-xl border border-kcm-light/20 text-kcm-light">
-              <Users className="h-6 w-6" />
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white flex items-center justify-center gap-4">
+            <span className="p-3 bg-kcm-light/15 rounded-2xl border-2 border-kcm-light/30 text-kcm-light shadow-md">
+              <Users className="h-7 w-7" />
             </span>
             Equipe de Desenvolvimento KCM
           </h1>
@@ -62,71 +62,71 @@ export default function Developers() {
             <KcmLogo />
           </div>
 
-          <p className="text-kcm-light text-sm max-w-2xl mx-auto">
+          <p className="text-slate-200 text-base font-medium max-w-2xl mx-auto leading-relaxed">
             Conheça os estudantes e o professor orientador do Instituto Federal do Pará (IFPA) responsáveis pela criação deste projeto educativo.
           </p>
         </div>
 
         {/* Grid de Integrantes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {team.map((member, index) => (
             <div
               key={index}
-              className="relative border border-kcm-dark rounded-2xl bg-kcm-darker/20 p-6 hover:border-kcm-light/40 transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+              className="relative border-2 border-kcm-dark rounded-3xl bg-kcm-darker/20 p-6 md:p-8 hover:border-kcm-light/40 transition-all duration-300 flex flex-col justify-between group overflow-hidden shadow-lg"
             >
               {/* Efeito de brilho no hover */}
-              <div className="absolute -inset-px bg-gradient-to-r from-kcm-light/10 to-kcm-medium/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+              <div className="absolute -inset-px bg-gradient-to-r from-kcm-light/10 to-kcm-medium/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
 
-              <div className="relative z-10 space-y-4">
+              <div className="relative z-10 space-y-5">
                 {/* Topo do Card */}
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-5">
                   {/* Avatar */}
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center text-kcm-darkest font-bold text-lg shadow-lg`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.color} flex items-center justify-center text-kcm-darkest font-black text-xl shadow-lg flex-shrink-0`}>
                     {member.avatar}
                   </div>
 
                   {/* Informações Básicas */}
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <h3 className="font-bold text-kcm-lightest text-base leading-tight">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-black text-white text-lg leading-tight">
                         {member.name}
                       </h3>
                       {member.isAdvisor && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-kcm-light/10 text-kcm-light border border-kcm-light/20">
-                          <Award className="h-3 w-3" /> Orientador
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-kcm-light/15 text-white border border-kcm-light/20">
+                          <Award className="h-3.5 w-3.5 text-kcm-light" /> Orientador
                         </span>
                       )}
                     </div>
-                    <p className="text-xs font-semibold text-kcm-light">
+                    <p className="text-sm font-extrabold text-kcm-light">
                       {member.role}
                     </p>
-                    <p className="text-[11px] text-kcm-light/80">
+                    <p className="text-xs font-bold text-slate-300">
                       {member.course}
                     </p>
-                    <p className="text-[10px] text-kcm-medium flex items-center gap-1">
-                      <GraduationCap className="h-3.5 w-3.5 text-kcm-medium" /> {member.campus}
+                    <p className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+                      <GraduationCap className="h-4 w-4 text-slate-400" /> {member.campus}
                     </p>
                   </div>
                 </div>
 
                 {/* Descrição */}
-                <p className="text-xs text-kcm-light leading-relaxed">
+                <p className="text-sm text-slate-200 font-medium leading-relaxed">
                   {member.bio}
                 </p>
               </div>
 
               {/* Redes Sociais / Contato */}
-              <div className="relative z-10 flex items-center gap-3 pt-4 mt-4 border-t border-t-kcm-dark/60">
-                <span className="text-[10px] text-kcm-medium font-medium">Contato:</span>
-                <div className="flex gap-2">
-                  <button className="p-1.5 rounded-lg bg-kcm-darkest border border-kcm-dark text-kcm-light hover:text-kcm-lightest hover:border-kcm-light/30 transition-all">
-                    <Mail className="h-3.5 w-3.5" />
+              <div className="relative z-10 flex items-center gap-4 pt-5 mt-5 border-t-2 border-t-kcm-dark/60">
+                <span className="text-xs text-slate-300 font-bold">Contato:</span>
+                <div className="flex gap-2.5">
+                  <button aria-label={`Enviar e-mail para ${member.name}`} className="p-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-200 hover:text-white hover:border-kcm-light/40 transition-all shadow-sm">
+                    <Mail className="h-4 w-4" />
                   </button>
-                  <button className="p-1.5 rounded-lg bg-kcm-darkest border border-kcm-dark text-kcm-light hover:text-kcm-lightest hover:border-kcm-light/30 transition-all">
-                    <Github className="h-3.5 w-3.5" />
+                  <button aria-label={`Acessar GitHub de ${member.name}`} className="p-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-200 hover:text-white hover:border-kcm-light/40 transition-all shadow-sm">
+                    <Github className="h-4 w-4" />
                   </button>
-                  <button className="p-1.5 rounded-lg bg-kcm-darkest border border-kcm-dark text-kcm-light hover:text-kcm-lightest hover:border-kcm-light/30 transition-all">
-                    <Linkedin className="h-3.5 w-3.5" />
+                  <button aria-label={`Acessar LinkedIn de ${member.name}`} className="p-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-200 hover:text-white hover:border-kcm-light/40 transition-all shadow-sm">
+                    <Linkedin className="h-4 w-4" />
                   </button>
                 </div>
               </div>
@@ -136,14 +136,14 @@ export default function Developers() {
 
         {/* Informações do IFPA */}
         <div className="flex justify-center">
-          {/* Card IFPA */}
-          <div className="w-full max-w-2xl border border-kcm-dark rounded-2xl bg-kcm-darker/10 p-6 text-center space-y-4 flex flex-col items-center justify-center">
-            <div className="p-3 bg-kcm-darker rounded-2xl border border-kcm-dark/60 flex items-center justify-center w-fit">
-              <IfpaLogo size={32} />
+          {/* Card IFPA Centralizado */}
+          <div className="w-full max-w-lg border-2 border-kcm-dark rounded-3xl bg-kcm-darker/10 p-8 text-center space-y-5 flex flex-col items-center justify-center shadow-lg">
+            <div className="p-4 bg-kcm-darker rounded-2xl border-2 border-kcm-dark/80 flex items-center justify-center w-fit shadow-md">
+              <IfpaLogo size={36} />
             </div>
-            <div className="space-y-2">
-              <h3 className="text-base font-bold text-kcm-lightest">Instituto Federal do Pará</h3>
-              <p className="text-xs text-kcm-light max-w-md mx-auto">
+            <div className="space-y-3">
+              <h3 className="text-lg font-black text-white">Instituto Federal do Pará</h3>
+              <p className="text-sm text-slate-200 font-medium max-w-sm mx-auto leading-relaxed">
                 Campus Conceição do Araguaia. Projeto desenvolvido como parte das atividades acadêmicas do Curso Técnico em Informática.
               </p>
             </div>
