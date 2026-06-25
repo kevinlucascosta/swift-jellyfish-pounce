@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
-import { BookOpen, HelpCircle, ArrowRight, Sparkles, History, RefreshCw, ShieldCheck, Lock } from "lucide-react";
+import { BookOpen, HelpCircle, ArrowRight, History, RefreshCw, ShieldCheck, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -20,9 +20,6 @@ export default function Index() {
         <div className="relative rounded-3xl overflow-hidden border-2 border-kcm-dark bg-gradient-to-b from-kcm-darker to-kcm-darkest p-6 sm:p-10 md:p-16 text-center shadow-xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(155,168,171,0.12),transparent_60%)]" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-6 sm:space-y-8">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-kcm-light/15 text-white border-2 border-kcm-light/30">
-              <Sparkles className="h-4 w-4 text-kcm-light" /> Aprendizado Interativo
-            </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
               Desvende a Criptografia de César
             </h1>
@@ -113,7 +110,7 @@ export default function Index() {
             </h2>
             
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium leading-relaxed">
-              A criptografia funciona como um <strong>cadeado digital invisível</strong>. Toda vez que você envia uma mensagem no WhatsApp, faz um Pix, digita uma senha ou faz compras na internet, ela transforma suas informações pessoais em um código secreto embaralhado.
+              A criptografia funciona como um <strong>cadeado digital invisível</strong>. Toda vez que você envia uma mensagem no WhatsApp, faz um Pix, digita uma senha ou faz compras na internet, ela transforma suas informações pessoais em um código secreto tempo real.
             </p>
             
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium leading-relaxed">

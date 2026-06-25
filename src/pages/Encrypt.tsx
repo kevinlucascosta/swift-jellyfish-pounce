@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { encryptCaesar } from "@/utils/caesar";
 import { showSuccess } from "@/utils/toast";
-import { Lock, Copy, Trash2, Sparkles, ArrowRight, Info } from "lucide-react";
+import { Lock, Copy, Trash2, ArrowRight, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -49,7 +49,7 @@ export default function Encrypt() {
           {/* Coluna de Entrada */}
           <div className="space-y-5 sm:space-y-6 border-2 border-kcm-dark rounded-3xl bg-kcm-darker/20 p-5 sm:p-6 md:p-8 shadow-lg">
             <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
-              <Sparkles className="h-4.5 w-4.5 sm:h-5 sm:w-5 text-kcm-light" /> Configurações de Entrada
+              Configurações de Entrada
             </h2>
 
             {/* Campo de Texto Original */}
