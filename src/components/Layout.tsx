@@ -23,22 +23,32 @@ export default function Layout({ children }: LayoutProps) {
 
   const teamContacts = [
     {
-      name: "Kevin Lucas Costa",
+      name: "Kevin Lucas Costa e Silva",
       email: "kevinlucas07cs@gmail.com",
       githubUser: "kevinlucascosta",
       githubUrl: "https://github.com/kevinlucascosta",
+      linkedin: "https://linkedin.com/in/kevinlucascosta",
     },
     {
-      name: "Carlos Henrique",
+      name: "Maysa Toryn Mota Ferreira",
+      email: "maysatoryn.contact@gmail.com",
+      githubUser: "maysatoryn",
+      githubUrl: "https://github.com/maysatoryn",
+      linkedin: "",
+    },
+    {
+      name: "Carlos Henrique Freire Almeida",
       email: "carloshenrique86336@gmail.com",
       githubUser: "carlos0942",
       githubUrl: "https://github.com/carlos0942",
+      linkedin: "",
     },
     {
-      name: "Ryan Sales",
+      name: "Prof. Patrick Ryan Sales dos Santos",
       email: "pryansaless@gmail.com",
       githubUser: "SalesRyan",
       githubUrl: "https://github.com/SalesRyan",
+      linkedin: "",
     }
   ];
 
