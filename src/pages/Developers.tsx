@@ -300,6 +300,6 @@ export default function Developers() {
           </div>
         </div>
       )}
-    </div>
+    </Layout>
   );
 }
