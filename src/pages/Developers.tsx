@@ -6,7 +6,7 @@ import KcmLogo from "@/components/KcmLogo";
 import { showSuccess } from "@/utils/toast";
 
 export default function Developers() {
-  const [activeModal, setActiveModal] = useState<"email" | "github" | "linkedin" | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
 
   const team = [
@@ -47,6 +47,27 @@ export default function Developers() {
       color: "from-kcm-light to-kcm-dark",
       isAdvisor: true,
     },
+  ];
+
+  const teamContacts = [
+    {
+      name: "Kevin Lucas Costa",
+      email: "kevinlucas07cs@gmail.com",
+      githubUser: "kevinlucascosta",
+      githubUrl: "https://github.com/kevinlucascosta",
+    },
+    {
+      name: "Carlos Henrique",
+      email: "carloshenrique86336@gmail.com",
+      githubUser: "carlos0942",
+      githubUrl: "https://github.com/carlos0942",
+    },
+    {
+      name: "Ryan Sales",
+      email: "pryansaless@gmail.com",
+      githubUser: "SalesRyan",
+      githubUrl: "https://github.com/SalesRyan",
+    }
   ];
 
   const handleCopyEmail = (email: string) => {
@@ -131,21 +152,21 @@ export default function Developers() {
                 <span className="text-[11px] sm:text-xs text-slate-300 font-bold">Contato:</span>
                 <div className="flex gap-2">
                   <button
-                    onClick={() => setActiveModal("email")}
+                    onClick={() => setIsContactModalOpen(true)}
                     aria-label="Ver e-mails de contato"
                     className="p-1.5 sm:p-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-200 hover:text-white hover:border-kcm-light/40 transition-all shadow-sm cursor-pointer"
                   >
                     <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </button>
                   <button
-                    onClick={() => setActiveModal("github")}
+                    onClick={() => setIsContactModalOpen(true)}
                     aria-label="Ver perfis do GitHub"
                     className="p-1.5 sm:p-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-200 hover:text-white hover:border-kcm-light/40 transition-all shadow-sm cursor-pointer"
                   >
                     <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </button>
                   <button
-                    onClick={() => setActiveModal("linkedin")}
+                    onClick={() => setIsContactModalOpen(true)}
                     aria-label="Ver perfis do LinkedIn"
                     className="p-1.5 sm:p-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-200 hover:text-white hover:border-kcm-light/40 transition-all shadow-sm cursor-pointer"
                   >
@@ -175,19 +196,19 @@ export default function Developers() {
       </div>
 
       {/* Modal Unificado Moderno e Responsivo */}
-      {activeModal && (
+      {isContactModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
           {/* Overlay escurecido com desfoque */}
           <div 
             className="absolute inset-0 bg-kcm-darkest/80 backdrop-blur-md"
-            onClick={() => setActiveModal(null)}
+            onClick={() => setIsContactModalOpen(false)}
           />
           
           {/* Conteúdo do Modal */}
-          <div className="relative w-full max-w-md bg-kcm-darker border-2 border-kcm-dark rounded-3xl p-6 sm:p-8 shadow-2xl animate-in zoom-in-95 duration-200 z-10">
+          <div className="relative w-full max-w-4xl bg-kcm-darker border-2 border-kcm-dark rounded-3xl p-6 sm:p-8 shadow-2xl animate-in zoom-in-95 duration-200 z-10 max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-kcm-dark">
             {/* Botão Fechar */}
             <button
-              onClick={() => setActiveModal(null)}
+              onClick={() => setIsContactModalOpen(false)}
               className="absolute top-4 right-4 p-1.5 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-slate-300 hover:text-white hover:border-kcm-light/40 transition-all cursor-pointer"
               aria-label="Fechar modal"
             >
@@ -197,96 +218,80 @@ export default function Developers() {
             {/* Cabeçalho do Modal */}
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2.5 bg-kcm-light/15 rounded-2xl border-2 border-kcm-light/30 text-kcm-light">
-                {activeModal === "email" && <Mail className="h-5 w-5 sm:h-6 sm:w-6" />}
-                {activeModal === "github" && <Github className="h-5 w-5 sm:h-6 sm:w-6" />}
-                {activeModal === "linkedin" && <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />}
+                <Users className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <h2 className="text-lg sm:text-xl font-black text-white">
-                {activeModal === "email" && "Contatos de E-mail"}
-                {activeModal === "github" && "Perfis do GitHub"}
-                {activeModal === "linkedin" && "Perfis do LinkedIn"}
+                Contatos da Equipe
               </h2>
             </div>
 
-            {/* Corpo do Modal */}
-            <div className="space-y-4">
-              {activeModal === "email" && (
-                <div className="space-y-3">
-                  {[
-                    { name: "Carlos Henrique", email: "carloshenrique86336@gmail.com" },
-                    { name: "Kevin Lucas", email: "kevinlucas07cs@gmail.com" }
-                  ].map((item) => (
-                    <div key={item.email} className="p-3.5 bg-kcm-darkest border-2 border-kcm-dark rounded-2xl space-y-2">
-                      <p className="text-xs sm:text-sm font-extrabold text-slate-300">{item.name}</p>
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            {/* Corpo do Modal - Cartões de Pessoas */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              {teamContacts.map((member) => (
+                <div key={member.email} className="p-5 bg-kcm-darkest border-2 border-kcm-dark rounded-2xl space-y-4 flex flex-col justify-between hover:border-kcm-light/30 transition-all duration-300">
+                  <div className="space-y-3">
+                    <h3 className="text-base sm:text-lg font-black text-white border-b border-kcm-dark/60 pb-2">
+                      {member.name}
+                    </h3>
+                    
+                    {/* Seção de E-mail */}
+                    <div className="space-y-1.5">
+                      <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1.5">
+                        <Mail className="h-3.5 w-3.5 text-kcm-light" /> E-mail
+                      </span>
+                      <div className="flex flex-col gap-1.5">
                         <a 
-                          href={`mailto:${item.email}`}
-                          className="text-xs sm:text-sm font-bold text-kcm-light hover:text-white transition-colors break-all"
+                          href={`mailto:${member.email}`}
+                          className="text-xs font-bold text-kcm-light hover:text-white transition-colors break-all"
                         >
-                          {item.email}
+                          {member.email}
                         </a>
-                        <div className="flex gap-2 self-end sm:self-auto">
-                          <button
-                            onClick={() => handleCopyEmail(item.email)}
-                            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-kcm-darker border border-kcm-dark text-[11px] font-bold text-slate-300 hover:text-white hover:border-kcm-light/40 transition-all cursor-pointer"
-                          >
-                            {copiedEmail === item.email ? (
-                              <>
-                                <Check className="h-3 w-3 text-green-400" /> Copiado
-                              </>
-                            ) : (
-                              <>
-                                <Copy className="h-3 w-3" /> Copiar
-                              </>
-                            )}
-                          </button>
-                        </div>
+                        <button
+                          onClick={() => handleCopyEmail(member.email)}
+                          className="flex items-center justify-center gap-1.5 w-full py-1.5 rounded-lg bg-kcm-darker border border-kcm-dark text-[11px] font-bold text-slate-300 hover:text-white hover:border-kcm-light/40 transition-all cursor-pointer"
+                        >
+                          {copiedEmail === member.email ? (
+                            <>
+                              <Check className="h-3 w-3 text-green-400" /> Copiado
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="h-3 w-3" /> Copiar E-mail
+                            </>
+                          )}
+                        </button>
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
 
-              {activeModal === "github" && (
-                <div className="space-y-3">
-                  {[
-                    { name: "Kevin Lucas Costa", url: "https://github.com/kevinlucascosta" },
-                    { name: "Carlos", url: "https://github.com/carlos0942" },
-                    { name: "Ryan Sales", url: "https://github.com/SalesRyan" }
-                  ].map((item) => (
-                    <a
-                      key={item.url}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-3.5 bg-kcm-darkest border-2 border-kcm-dark rounded-2xl hover:border-kcm-light/40 transition-all group"
-                    >
-                      <div>
-                        <p className="text-xs sm:text-sm font-extrabold text-white">{item.name}</p>
-                        <p className="text-[11px] sm:text-xs text-slate-400 font-medium break-all">{item.url}</p>
-                      </div>
-                      <ExternalLink className="h-4 w-4 text-slate-400 group-hover:text-kcm-light transition-colors flex-shrink-0 ml-2" />
-                    </a>
-                  ))}
+                    {/* Seção de GitHub */}
+                    <div className="space-y-1.5 pt-2">
+                      <span className="text-[11px] font-bold text-slate-400 flex items-center gap-1.5">
+                        <Github className="h-3.5 w-3.5 text-kcm-light" /> GitHub
+                      </span>
+                      <a
+                        href={member.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-2.5 bg-kcm-darker border border-kcm-dark rounded-xl hover:border-kcm-light/40 transition-all group"
+                      >
+                        <span className="text-xs font-bold text-slate-200 group-hover:text-white">
+                          {member.githubUser}
+                        </span>
+                        <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-kcm-light transition-colors" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              )}
-
-              {activeModal === "linkedin" && (
-                <div className="p-6 bg-kcm-darkest border-2 border-kcm-dark rounded-2xl text-center space-y-2">
-                  <p className="text-sm sm:text-base font-bold text-slate-200">
-                    Perfis do LinkedIn serão adicionados em breve.
-                  </p>
-                  <p className="text-xs text-slate-400 font-medium">
-                    Agradecemos a sua compreensão!
-                  </p>
-                </div>
-              )}
+              ))}
             </div>
 
             {/* Rodapé do Modal */}
-            <div className="mt-6 pt-4 border-t border-kcm-dark/60 flex justify-end">
+            <div className="mt-6 pt-4 border-t border-kcm-dark/60 flex justify-between items-center flex-wrap gap-3">
+              <p className="text-[11px] text-slate-400 font-medium">
+                * Perfis do LinkedIn serão adicionados em breve.
+              </p>
               <button
-                onClick={() => setActiveModal(null)}
+                onClick={() => setIsContactModalOpen(false)}
                 className="px-4 py-2 rounded-xl bg-kcm-darkest border-2 border-kcm-dark text-xs sm:text-sm font-bold text-slate-300 hover:text-white hover:border-kcm-light/40 transition-all cursor-pointer"
               >
                 Fechar
@@ -295,6 +300,6 @@ export default function Developers() {
           </div>
         </div>
       )}
-    </Layout>
+    </div>
   );
 }
